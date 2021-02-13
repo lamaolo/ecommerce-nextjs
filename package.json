@@ -8,8 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
+    "dotenv": "^8.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "mongoose": "^5.11.4",
     "next": "10.0.4",
+    "popper.js": "^1.16.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-hamburger-menu": "^1.2.1",
+    "react-hook-form": "^6.13.1",
+    "react-items-carousel": "^2.8.0",
+    "react-responsive-carousel": "^3.2.11",
+    "styled-components": "^5.2.1",
+    "uuid": "^8.3.1"
   }
 }
