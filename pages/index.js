@@ -11,7 +11,7 @@ import Contact from "../components/Contact";
 export const getStaticProps = async (context) => {
   const response = await fetch(`${process.env.URL}/api/products`);
   const data = await response.json();
-  console.log("data: ", data);
+
   return {
     props: {
       data: data,
