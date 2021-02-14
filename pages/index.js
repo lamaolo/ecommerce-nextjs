@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
 import Contact from "../components/Contact";
-
+/*
 export const getStaticProps = async (context) => {
   const response = await fetch(`${process.env.URL}/api/products`);
   const data = await response.json();
@@ -18,7 +18,7 @@ export const getStaticProps = async (context) => {
     },
   };
 };
-
+*/
 export default function Home({ data }) {
   const [state, dispatch] = useContext(CartContext);
 
