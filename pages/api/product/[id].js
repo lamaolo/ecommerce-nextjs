@@ -5,15 +5,14 @@ export default async (req, res) => {
 
   try {
     const product = await getProductById(id);
+    if (product) {
+      res.status(200);
+      res.json({ product: product });
+    } else {
+      res.status(404);
+      res.end();
+    }
   } catch (e) {
     console.error(e);
-  }
-
-  if (product) {
-    res.status(200);
-    res.json({ product: product });
-  } else {
-    res.status(404);
-    res.end();
   }
 };
