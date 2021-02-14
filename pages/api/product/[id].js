@@ -1,11 +1,13 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
 import { getProductById } from "../../../db/controllers";
 
 export default async (req, res) => {
   const id = req.query.id;
 
-  const product = await getProductById(id);
+  try {
+    const product = await getProductById(id);
+  } catch (e) {
+    console.error(e);
+  }
 
   if (product) {
     res.status(200);

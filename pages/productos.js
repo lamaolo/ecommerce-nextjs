@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import ProductsList from "../components/ProductsList";
 
 export const getStaticProps = async (context) => {
-  const response = await fetch("http://localhost:3000/api/products");
+  const response = await fetch(`${process.env.URL}/api/products`);
   const data = await response.json();
 
   return {

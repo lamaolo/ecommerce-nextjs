@@ -4,13 +4,21 @@ const connectDB = require("../db/db");
 connectDB();
 
 export default async function getAllProducts() {
-  const allProducts = await Product.find();
-  return allProducts;
+  try {
+    const allProducts = await Product.find();
+    return allProducts;
+  } catch (error) {
+    return error;
+  }
 }
 
 export async function getProductById(id) {
-  const product = await Product.findById(id);
+  try {
+    const product = await Product.findById(id);
 
-  if (product) return product;
-  return undefined;
+    if (product) return product;
+    return undefined;
+  } catch (error) {
+    return error;
+  }
 }

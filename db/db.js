@@ -1,17 +1,16 @@
 const mongoose = require("mongoose");
-require("dotenv").config();
 
 mongoose.connection.on("open", () => {
   console.log(">> Conectado a DB");
 });
 
-const { DB_NAME, DB_PASSWORD } = process.env;
+const { DB_NAME, DB_PASSWORD, DB_HOST } = process.env;
 
 // Cloud DB:
-// const URI = `mongodb+srv://dbAdmin:${DB_PASSWORD}@cluster0.mqiio.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+const URI = `mongodb+srv://dbAdmin:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
 
 // LocalHost DB;
-const URI = `mongodb://127.0.0.1:27017/pasteleria-next`;
+// const URI = `mongodb://127.0.0.1:27017/pasteleria-next`;
 
 async function connectDb() {
   // Checkear si ya está concetado a la DB

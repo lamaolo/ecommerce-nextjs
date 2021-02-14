@@ -44,7 +44,7 @@ const Producto = () => {
         setProduct(filterProduct[0]);
         console.log("product seteado desde state");
       } else {
-        fetch(`http://localhost:3000/api/product/${id}`)
+        fetch(`${process.env.URL}/api/product/${id}`)
           .then((res) => res.json())
           .then((data) => setProduct(data.product))
           .catch((err) => console.log(err));
