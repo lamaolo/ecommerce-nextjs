@@ -23,36 +23,39 @@ const Wrapper = styled.div`
   background-size: cover;
 `;
 
-const Producto = () => {
-  const [state, dispatch] = useContext(CartContext);
-  const [product, setProduct] = useState(null);
+export const getStaticPaths = async () => {
+  const response = await fetch(`${process.env.URL}/api/products`);
+  const { products } = await response.json();
 
-  const {
-    query: { id },
-  } = useRouter();
+  /**
+   * Las rutas estáticas neceistan un array de objetos con el formato:
+   * [{ params: { id: 'IdARenderarAcá } }]
+   *
+   * Por cada _id de la base de datos, añado un objeto de esos al arrary 'paths'
+   */
+  const paths = products.map(({ _id }) => ({ params: { id: _id } }));
 
-  useEffect(() => {
-    /**
-     * Este código es para evitar hacer un fetch. Si el usuario sigue el flujo de la página (navgeando por los <Link>), el 'producto'
-     * Será scado desde el state, sino, si el usuario abre directamente la URL se hará un fetch.
-     * De esta forma, si el usuario navega por la pagina, el tiempo de carga será instantaneo, si el usuario abre directamente la URL
-     * Se deberá hacer un fetch asincrono y mostrar un loader.
-     */
-    if (id) {
-      if (state.products.length > 1) {
-        const filterProduct = state.products.filter((p) => p._id === id);
-        setProduct(filterProduct[0]);
-        console.log("product seteado desde state");
-      } else {
-        fetch(`${process.env.URL}/api/product/${id}`)
-          .then((res) => res.json())
-          .then((data) => setProduct(data.product))
-          .catch((err) => console.log(err));
-        console.log("product seteado desde fetch");
-      }
-    }
-  }, [id]);
+  return {
+    // Todos los paths posibles generados estáticamente
+    paths,
+    // Mostrar 404 para las que no se generaron.
+    fallback: false,
+  };
+};
 
+export const getStaticProps = async ({ params }) => {
+  // 'params' contiene el id dinámico.
+  // /producto/1 => params.id == 1;
+
+  const response = await fetch(
+    `https://pasteleria-ecommerce-nextjs.lamaolo.vercel.app/api/product/${params?.id}`
+  );
+  const product = await response.json();
+
+  return { props: { product } };
+};
+
+const Producto = ({ product: { product } }) => {
   return (
     <Layout>
       <Wrapper product={product}>

@@ -1,7 +1,5 @@
-import { useContext, useEffect } from "react";
 import Head from "next/head";
 import fetch from "isomorphic-fetch";
-import { CartContext } from "../GlobalState";
 
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
@@ -20,19 +18,6 @@ export const getStaticProps = async (context) => {
 };
 
 export default function Home({ data }) {
-  const [state, dispatch] = useContext(CartContext);
-
-  useEffect(() => {
-    if (data) {
-      dispatch({
-        type: "ADD_PRODUCTS",
-        payload: {
-          products: data.products,
-        },
-      });
-    }
-  }, [data]);
-
   return (
     <Layout>
       <Head>
