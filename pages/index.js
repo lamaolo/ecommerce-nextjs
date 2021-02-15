@@ -20,9 +20,6 @@ export const getStaticProps = async (context) => {
 export default function Home({ data }) {
   return (
     <Layout>
-      <Head>
-        <title>Pasteleria Next.js</title>
-      </Head>
       <Hero />
       <Products products={data.products} />
       <Contact />

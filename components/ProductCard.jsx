@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import Image from "next/image";
 
 const Card = styled.article`
   width: 100% !important;
   border-radius: 10px;
   overflow: hidden;
   background: #f1f1f1;
-  & img {
+  & figure {
+    position: relative;
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    & img {
+      object-fit: cover;
+    }
   }
 `;
 
@@ -37,7 +41,9 @@ const CardBody = styled.section`
 const ProductCard = ({ product, handleAddToCart }) => {
   return (
     <Card>
-      <img src={product.foto} alt={product.nombre} />
+      <figure>
+        <Image layout="fill" src={product.foto} alt={product.nombre} />
+      </figure>
       <CardBody>
         <h5>{product.nombre}</h5>
         <p>

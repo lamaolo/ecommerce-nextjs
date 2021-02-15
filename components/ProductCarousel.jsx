@@ -56,7 +56,6 @@ const ProductCarousel = ({ products = [] }) => {
             <div className="Product-information">
               <p className="Product-name">{product.nombre}</p>
               <p className="Product-price">$ {product.precio}</p>
-              {/* Todo esto es para que la URL quede en minusculas, separada por guiones y sin caracteres especiales */}
               <Link href={`/producto/${product._id}`}>
                 <a>
                   <button type="button" className="btn btn-primary">

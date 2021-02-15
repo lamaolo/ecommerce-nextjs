@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Link from "next/link";
 
 import { CartContext } from "../GlobalState";
 
@@ -22,10 +23,12 @@ const TopBar = () => {
           </a>
         </div>
         <span className="line"></span>
-        <a className="cart-icon">
-          <i className="fas fa-shopping-cart"></i>
-          <p>({state.cart.length})</p>
-        </a>
+        <Link href="/carrito">
+          <a className="cart-icon">
+            <i className="fas fa-shopping-cart"></i>
+            <p>({state.cart.length})</p>
+          </a>
+        </Link>
       </div>
       <style jsx>{`
         .topbar {

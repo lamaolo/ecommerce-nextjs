@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CartContext } from "../GlobalState";
 import HamburgerMenu from "react-hamburger-menu";
 import styled from "styled-components";
@@ -34,7 +35,7 @@ const Header = () => {
         <div className="container">
           <Link href="/">
             <a className="Header-logo">
-              <img width="80" src="/logo.png" alt="Logo" />
+              <Image height="80" width="80" src="/logo.png" alt="Logo" />
             </a>
           </Link>
 
