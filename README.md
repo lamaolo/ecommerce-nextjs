@@ -15,4 +15,6 @@ Una pagina e-commerce de prueba que hice para estudiar e investigar el funcionam
 - Responsive design.
 - Otros...
 
+### [Live View](https://pasteleria-ecommerce-nextjs.lamaolo.vercel.app/)
+
 Marca y logos ficticios, imagenes sacadas de [Pexels](https://www.pexels.com/).
