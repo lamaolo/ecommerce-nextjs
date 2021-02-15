@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "isomorphic-fetch": "^3.0.0",
     "mongoose": "^5.11.4",
     "next": "10.0.4",
