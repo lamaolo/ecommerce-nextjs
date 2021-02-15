@@ -82,8 +82,8 @@ const Header = () => {
           }
 
           .Header-decoration {
-            background: url(http://designarc.biz/demos/cake/theme/cake-html/img/menu-draw.png)
-              no-repeat scroll center center;
+            background: url("/header-decoration.png") no-repeat scroll center
+              center;
             height: 19px;
             width: 100%;
             position: absolute;

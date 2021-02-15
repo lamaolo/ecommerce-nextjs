@@ -42,7 +42,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
         <h5>{product.nombre}</h5>
         <p>
           {product.descripcion.substring(0, 100) + "..."}{" "}
-          <Link href={`/producto/${product._id}`}>
+          <Link style={{ color: "#007bff" }} href={`/producto/${product._id}`}>
             <a>Ver más detalles</a>
           </Link>
         </p>
