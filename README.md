@@ -15,8 +15,11 @@ Una pagina e-commerce de prueba que hice para estudiar e investigar el funcionam
 - Responsive design.
 - Otros...
 
-### -> [Live View](https://pasteleria-ecommerce-nextjs.lamaolo.vercel.app/)
+<hr>
 
+### [Click aqui para ir al live view](https://pasteleria-ecommerce-nextjs.lamaolo.vercel.app)
+
+<hr>
 Marca y logos ficticios, imagenes sacadas de [Pexels](https://www.pexels.com/).
 
 Información, detalles y fotos de los postres sacadas de [Mott.pe](https://mott.pe/noticias/los-20-postres-mas-famosos-del-mundo-que-tienes-que-comer-antes-de-morir/)
